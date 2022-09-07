@@ -79,6 +79,7 @@ inputs:
         - "patch"
         - "minor"
         - "major"
+        - "none"
   - increment_build_number: "yes"
     opts:
       title: "Increment build number"

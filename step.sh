@@ -46,6 +46,8 @@ case $version_auto_increment_mode in
     version_split[$i]=0
   done
   ;;
+"none")
+  ;;
 esac
 
 

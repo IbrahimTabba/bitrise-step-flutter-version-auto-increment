@@ -3,13 +3,10 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 app:
   envs:
-  # An example secret param, define it (A_SECRET_PARAM) in .bitrise.secrets.yml
-  - A_SECRET_PARAM: $A_SECRET_PARAM
-  # If you want to share this step into a StepLib
   - BITRISE_STEP_ID: flutter-version-auto-increment
   - BITRISE_STEP_VERSION: "0.0.1"
   - BITRISE_STEP_GIT_CLONE_URL: https://github.com/IbrahimTabba/bitrise-step-flutter-version-auto-increment.git
-  - MY_STEPLIB_REPO_FORK_GIT_URL: git@github.com:IbrahimTabba/bitrise-steplib.git
+  - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/IbrahimTabba/bitrise-steplib.git
 
 workflows:
   test:
@@ -30,7 +27,7 @@ workflows:
           run_if: true
           inputs:
             - pubspec_path: './pubspec.yaml'
-            - version_auto_increment_mode: "patch"
+            - version_auto_increment_mode: "none"
             - increment_build_number: "yes"
       - script:
           title: Step Output
